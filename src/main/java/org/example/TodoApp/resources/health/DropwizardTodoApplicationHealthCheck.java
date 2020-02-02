@@ -1,14 +1,14 @@
 package org.example.TodoApp.resources.health;
 import com.codahale.metrics.health.HealthCheck;
 import org.example.TodoApp.resources.service.TodosService;
-public class DropwizardBlogApplicationHealthCheck extends HealthCheck {
-    private static final String HEALTHY = "The Dropwizard blog Service is healthy for read and write";
-    private static final String UNHEALTHY = "The Dropwizard blog Service is not healthy. ";
+public class DropwizardTodoApplicationHealthCheck extends HealthCheck {
+    private static final String HEALTHY = "The Dropwizard Service is healthy for read and write";
+    private static final String UNHEALTHY = "The Dropwizard Service is not healthy. ";
     private static final String MESSAGE_PLACEHOLDER = "{}";
 
     private final TodosService todosService;
 
-    public DropwizardBlogApplicationHealthCheck(TodosService todosService) {
+    public DropwizardTodoApplicationHealthCheck(TodosService todosService) {
         this.todosService = todosService;
     }
 

@@ -1,20 +1,13 @@
 package org.example.TodoApp;
 import io.dropwizard.Application;
-import io.dropwizard.auth.AuthDynamicFeature;
-import io.dropwizard.auth.oauth.OAuthCredentialAuthFilter;
 import io.dropwizard.setup.Environment;
 
 import javax.sql.DataSource;
 
-
-import org.example.TodoApp.resources.auth.DropwizardBlogAuthenticator;
-import org.example.TodoApp.resources.auth.DropwizardBlogAuthorizer;
-import org.example.TodoApp.resources.auth.User;
 import org.example.TodoApp.resources.config.TodoAppConfiguration;
-import org.example.TodoApp.resources.health.DropwizardBlogApplicationHealthCheck;
+import org.example.TodoApp.resources.health.DropwizardTodoApplicationHealthCheck;
 import org.example.TodoApp.resources.TodosResource;
 import org.example.TodoApp.resources.service.TodosService;
-import org.glassfish.jersey.server.filter.RolesAllowedDynamicFeature;
 import org.skife.jdbi.v2.DBI;
 
 public class TodoApplication extends Application<TodoAppConfiguration> {
@@ -28,24 +21,14 @@ public class TodoApplication extends Application<TodoAppConfiguration> {
 
     @Override
     public void run(TodoAppConfiguration configuration, Environment environment) {
-        // Datasource configuration
         final DataSource dataSource =
                 configuration.getDataSourceFactory().build(environment.metrics(), SQL);
         DBI dbi = new DBI(dataSource);
 
-        // Register Health Check
-        DropwizardBlogApplicationHealthCheck healthCheck =
-                new DropwizardBlogApplicationHealthCheck(dbi.onDemand(TodosService.class));
+        DropwizardTodoApplicationHealthCheck healthCheck =
+                new DropwizardTodoApplicationHealthCheck(dbi.onDemand(TodosService.class));
         environment.healthChecks().register(DROPWIZARD_BLOG_SERVICE, healthCheck);
 
-        // Register OAuth authentication
-//        environment.jersey()
-//                .register(new AuthDynamicFeature(new OAuthCredentialAuthFilter.Builder<User>()
-//                        .setAuthenticator(new DropwizardBlogAuthenticator())
-//                        .setAuthorizer(new DropwizardBlogAuthorizer()).setPrefix(BEARER).buildAuthFilter()));
-//        environment.jersey().register(RolesAllowedDynamicFeature.class);
-
-        // Register resources
         environment.jersey().register(new TodosResource(dbi.onDemand(TodosService.class)));
     }
 }

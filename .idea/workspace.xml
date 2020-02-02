@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="419967aa-8623-4e6b-856e-d383ac879e2f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configuration.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configuration.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TodoApp/TodoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TodoApp/TodoApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TodoApp/resources/TodosResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TodoApp/resources/TodosResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TodoApp/resources/dao/TodosDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TodoApp/resources/dao/TodosDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/TodoApp/TodoApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/TodoApp/TodoApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/TodoApp/resources/TodosResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/TodoApp/resources/TodosResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TodoApp/resources/health/DropwizardBlogApplicationHealthCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TodoApp/resources/health/DropwizardTodoApplicationHealthCheck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TodoApp/resources/representation/Representation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TodoApp/resources/representation/Representation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +95,7 @@
       <workItem from="1580139649387" duration="8030000" />
       <workItem from="1580202885027" duration="14536000" />
       <workItem from="1580627943602" duration="3017000" />
-      <workItem from="1580648015247" duration="2189000" />
+      <workItem from="1580648015247" duration="3074000" />
     </task>
     <servers />
   </component>

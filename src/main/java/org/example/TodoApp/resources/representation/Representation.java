@@ -11,7 +11,6 @@ public class Representation<T> {
     private T todo;
 
     public Representation() {
-        // Jackson deserialization
     }
 
     public Representation(long code, T todo) {
