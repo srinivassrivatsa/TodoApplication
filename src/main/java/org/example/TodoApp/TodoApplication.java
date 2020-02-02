@@ -38,6 +38,13 @@ public class TodoApplication extends Application<TodoAppConfiguration> {
                 new DropwizardBlogApplicationHealthCheck(dbi.onDemand(TodosService.class));
         environment.healthChecks().register(DROPWIZARD_BLOG_SERVICE, healthCheck);
 
+        // Register OAuth authentication
+//        environment.jersey()
+//                .register(new AuthDynamicFeature(new OAuthCredentialAuthFilter.Builder<User>()
+//                        .setAuthenticator(new DropwizardBlogAuthenticator())
+//                        .setAuthorizer(new DropwizardBlogAuthorizer()).setPrefix(BEARER).buildAuthFilter()));
+//        environment.jersey().register(RolesAllowedDynamicFeature.class);
+
         // Register resources
         environment.jersey().register(new TodosResource(dbi.onDemand(TodosService.class)));
     }

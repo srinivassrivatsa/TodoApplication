@@ -23,7 +23,7 @@ public interface TodosDao {
     @SqlUpdate("insert into todos(taskname, description) values(:taskname, :description)")
     void createTodo(@BindBean final Todo todo);
 
-    @SqlUpdate("update todos set name = coalesce(:taskname, taskname), desc = coalesce(:description, description) where id = :id")
+    @SqlUpdate("update todos set taskname = coalesce(:taskname, taskname), description = coalesce(:description, description) where id = :id")
     void editTodo(@BindBean final Todo todo);
 
     @SqlUpdate("delete from todos where id = :id")

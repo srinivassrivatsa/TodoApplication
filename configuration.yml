@@ -1,6 +1,6 @@
 database:
   driverClass: com.mysql.cj.jdbc.Driver
-  url: jdbc:mysql://localhost:3306/example
+  url: jdbc:mysql://localhost:3306/example?useSSL=false
   user: root
   password: password
   maxWaitForConnection: 1s

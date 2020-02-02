@@ -32,6 +32,12 @@ public class TodosResource {
     @GET
     @Timed
     public Representation<List<Todo>> getTodos() {
+        try {
+            return new Representation<List<Todo>>(HttpStatus.OK_200, todosService.getTodos());
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
         return new Representation<List<Todo>>(HttpStatus.OK_200, todosService.getTodos());
     }
 
